@@ -9,12 +9,12 @@ import functools
 import logging
 import stat
 import os
-import salt.utils
+import salt.utils.platform
 
 log = logging.getLogger(__name__)
 
 def __virtual__():
-    if salt.utils.is_windows():
+    if salt.utils.platorm.is_windows():
         return False
     return 'auditd'
 
